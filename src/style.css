@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunilo:wght@400;500;600;700&family=Nunilo+Sans:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  /* FONTES */
+  --font-sans: "Nunilo Sans", sans-serif;
+  --font-display: "Nunilo", serif;
+
+  /* PALETA DE CORES */
+  --color-avanti-blue: #0057ff;
+  --color-avanti-dark: #1a1a1a;
+  --color-avanti-accent: #5ec0be;
+  --color-gray-light: #e7e7ea;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
