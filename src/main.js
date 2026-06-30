@@ -126,21 +126,26 @@ function initSearch() {
 
 // swiper de produtos (lançamentos)
 function initProductsSwiper() {
-  const swiperEl = document.querySelector('.products-swiper');
-  if (!swiperEl) return;
+  const swiperEls = document.querySelectorAll('.products-swiper');
+  if (!swiperEls.length) return;
 
-  new Swiper(swiperEl, {
-    modules: [Navigation, Pagination],
-    slidesPerView: 'auto',
-    spaceBetween: SWIPER_SPACING,
-    navigation: {
-      nextEl: '.swiper-button-next-custom',
-      prevEl: '.swiper-button-prev-custom',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    breakpoints: SWIPER_BREAKPOINTS,
+  swiperEls.forEach(swiperEl => {
+    const wrapper = swiperEl.parentElement;
+    const container = wrapper.parentElement;
+
+    new Swiper(swiperEl, {
+      modules: [Navigation, Pagination],
+      slidesPerView: 'auto',
+      spaceBetween: SWIPER_SPACING,
+      navigation: {
+        nextEl: swiperEl.parentElement.querySelector('.swiper-button-next-custom'),
+        prevEl: swiperEl.parentElement.querySelector('.swiper-button-prev-custom'),
+      },
+      pagination: {
+        el: swiperEl.querySelector('.swiper-pagination'),
+        clickable: true,
+      },
+      breakpoints: SWIPER_BREAKPOINTS,
+    });
   });
 }
