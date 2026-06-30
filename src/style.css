@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunilo:wght@400;500;600;700&family=Nunilo+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap");
 
 @import "tailwindcss";
 
@@ -22,10 +22,27 @@ body {
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #d1d5db;
   border-radius: 4px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* estilização das bolinhas do carrossel swiper */
+@layer components {
+  .swiper-pagination {
+    @apply !relative !bottom-0 mt-4;
+  }
+  
+  .swiper-pagination-bullet {
+    @apply !w-2 !h-2 !bg-gray-400 !opacity-100 !rounded-full !transition-all !duration-300;
+  }
+  
+  .swiper-pagination-bullet-active {
+    @apply !bg-black !w-2 !rounded;
+  }
 }
