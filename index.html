@@ -1142,19 +1142,51 @@
 
       </div>
     </section>
-    
+
     <section class="relative w-full h-[660px] mt-[91px]">
-      <img 
-        src="/src/assets/images/bg-contato.png" 
-        alt="Background contato" 
-        class="absolute inset-0 w-full h-full object-cover object-center"
-      />
+      <img src="/src/assets/images/bg-contato.png" alt="Background contato"
+        class="absolute inset-0 w-full h-full object-cover object-center" />
 
       <div class="absolute inset-0 flex items-center justify-center">
         <div class="w-full bg-avanti-blue h-[132px] flex items-center justify-center px-4">
           <p class="text-white text-[30px] text-center">
             Entre em contato conosco e verifique a disponibilidade para sua região!
           </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-center text-[20px] font-bold mb-6 font-sans">
+          Cadastre-se na nossa <span class="text-avanti-blue">newsletter</span>
+        </h2>
+
+        <div class="max-w-[1250px] mx-auto bg-[#DEDEDE] rounded-[8px] h-[176px] flex items-center justify-center px-8">
+          <div class="flex items-center gap-6">
+            <!-- Input Nome -->
+            <input type="text" placeholder="Digite seu nome"
+              class="w-[280px] h-[48px] px-4 rounded-[8px] bg-white text-[14px] font-sans font-normal focus:outline-none focus:ring-2 focus:ring-avanti-blue" />
+
+            <!-- Input Email -->
+            <input type="email" placeholder="Digite seu e-mail"
+              class="w-[280px] h-[48px] px-4 rounded-[8px] bg-white text-[14px] font-sans font-normal focus:outline-none focus:ring-2 focus:ring-avanti-blue" />
+
+            <!-- Checkbox -->
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="privacidade"
+                class="w-4 h-4 rounded-sm border-gray-300 text-avanti-blue focus:ring-avanti-blue" />
+              <label for="privacidade" class="text-[14px] font-sans text-gray-700 whitespace-nowrap">
+                Estou de acordo com a <a href="#" class="underline text-gray-700 hover:text-avanti-blue">Política de
+                  Privacidade</a>
+              </label>
+            </div>
+            
+            <button
+              class="w-[121px] h-[48px] bg-avanti-blue text-white font-bold rounded-[8px] hover:bg-opacity-90 transition-colors font-sans">
+              Cadastrar
+            </button>
+          </div>
         </div>
       </div>
     </section>
