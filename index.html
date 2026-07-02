@@ -765,18 +765,33 @@
       </div>
     </section>
 
-    <section class="w-full h-[819px] bg-[#DEDEDE] mt-[78px] flex items-center overflow-hidden">
-      <div class="max-w-[1288.4px] w-full mx-auto px-[62px] flex items-center gap-[49px]">
+    <!-- SEÇÃO: DESTAQUE DE RECURSOS -->
+    <section
+      class="w-full h-[819px] bg-[#DEDEDE] mt-[78px] flex items-center overflow-hidden max-md:h-[717px] max-md:w-[391px] max-md:pt-[28px] max-md:pb-[24px]">
 
-        <div class="w-[476px] h-[567px] flex flex-col shrink-0">
-          <h2 class="text-[30px] font-bold text-black uppercase mb-[50px] text-center">
+      <!-- CONTAINER PRINCIPAL -->
+      <div
+        class="max-w-[1288.4px] w-full mx-auto px-[62px] flex items-center gap-[49px] max-md:flex-col max-md:px-[20px] max-md:gap-0">
+
+        <!-- IMAGEM MOBILE (visível apenas em telas menores, posicionada no topo) -->
+        <img src="/src/assets/images/xicara-avanti-2.png" alt="Xícara Avanti"
+          class="hidden max-md:block w-[349px] h-[349px] object-cover mx-auto mb-[28px]" />
+
+        <!-- COLUNA DE TEXTO E LISTA DE RECURSOS -->
+        <div class="w-[476px] h-[567px] flex flex-col shrink-0 max-md:w-full max-md:h-auto">
+
+          <!-- TÍTULO DA SEÇÃO -->
+          <h2
+            class="text-[30px] font-bold text-black uppercase mb-[50px] text-center max-md:text-[20px] max-md:mb-[21px]">
             LOREM IPSUM
           </h2>
 
-          <!-- Item 1 -->
-          <div class="flex gap-[20px] mb-[50px]">
-            <div class="w-[90px] h-[90px] shrink-0 mt-[10px]">
-              <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- ITEM 1: RECURSO / BENEFÍCIO -->
+          <div class="flex gap-[20px] mb-[50px] max-md:gap-[14px] max-md:mb-[21px] max-md:items-start">
+            <div
+              class="w-[90px] h-[90px] shrink-0 mt-[10px] max-md:w-[60px] max-md:h-[60px] max-md:mt-[4px] max-md:[filter:drop-shadow(0_2px_4px_rgba(0,0,0,0.25))]">
+              <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="max-md:w-[60px] max-md:h-[60px]">
                 <circle cx="45" cy="45" r="45" fill="#005CFF" />
                 <path
                   d="M62.5 41.6818C62.5 55.0455 45.25 66.5 45.25 66.5C45.25 66.5 28 55.0455 28 41.6818C28 37.1249 29.8174 32.7547 33.0524 29.5324C36.2874 26.3102 40.675 24.5 45.25 24.5C49.825 24.5 54.2126 26.3102 57.4476 29.5324C60.6826 32.7547 62.5 37.1249 62.5 41.6818Z"
@@ -786,16 +801,19 @@
                   stroke="white" stroke-width="1.81818" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
-            <p class="text-[18px] font-normal leading-relaxed tracking-[0.05em] text-[#4f4f4f]">
+            <p
+              class="text-[18px] font-normal leading-relaxed tracking-[0.05em] text-[#4f4f4f] max-md:text-black max-md:text-[12px] max-md:leading-[140%] max-md:tracking-[0.05em] max-md:w-[276px] max-md:h-[68px] max-md:overflow-hidden max-md:[text-shadow:0_2px_4px_rgba(0,0,0,0.25)]">
               Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
               quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
             </p>
           </div>
 
-          <!-- Item 2 -->
-          <div class="flex gap-[20px] mb-[50px]">
-            <div class="w-[90px] h-[90px] shrink-0 mt-[10px]">
-              <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- ITEM 2: RECURSO / BENEFÍCIO -->
+          <div class="flex gap-[20px] mb-[50px] max-md:gap-[14px] max-md:mb-[21px] max-md:items-start">
+            <div
+              class="w-[90px] h-[90px] shrink-0 mt-[10px] max-md:w-[60px] max-md:h-[60px] max-md:mt-[4px] max-md:[filter:drop-shadow(0_2px_4px_rgba(0,0,0,0.25))]">
+              <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="max-md:w-[60px] max-md:h-[60px]">
                 <circle cx="45" cy="45" r="45" fill="#005CFF" />
                 <path
                   d="M62.5 41.6818C62.5 55.0455 45.25 66.5 45.25 66.5C45.25 66.5 28 55.0455 28 41.6818C28 37.1249 29.8174 32.7547 33.0524 29.5324C36.2874 26.3102 40.675 24.5 45.25 24.5C49.825 24.5 54.2126 26.3102 57.4476 29.5324C60.6826 32.7547 62.5 37.1249 62.5 41.6818Z"
@@ -805,16 +823,19 @@
                   stroke="white" stroke-width="1.81818" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
-            <p class="text-[18px] font-normal leading-relaxed tracking-[0.05em] text-[#4f4f4f]">
+            <p
+              class="text-[18px] font-normal leading-relaxed tracking-[0.05em] text-[#4f4f4f] max-md:text-black max-md:text-[12px] max-md:leading-[140%] max-md:tracking-[0.05em] max-md:w-[276px] max-md:h-[68px] max-md:overflow-hidden max-md:[text-shadow:0_2px_4px_rgba(0,0,0,0.25)]">
               Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
               quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
             </p>
           </div>
 
-          <!-- Item 3 -->
-          <div class="flex gap-[20px]">
-            <div class="w-[90px] h-[90px] shrink-0 mt-[10px]">
-              <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- ITEM 3: RECURSO / BENEFÍCIO -->
+          <div class="flex gap-[20px] max-md:gap-[14px] max-md:items-start">
+            <div
+              class="w-[90px] h-[90px] shrink-0 mt-[10px] max-md:w-[60px] max-md:h-[60px] max-md:mt-[4px] max-md:[filter:drop-shadow(0_2px_4px_rgba(0,0,0,0.25))]">
+              <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="max-md:w-[60px] max-md:h-[60px]">
                 <circle cx="45" cy="45" r="45" fill="#005CFF" />
                 <path
                   d="M62.5 41.6818C62.5 55.0455 45.25 66.5 45.25 66.5C45.25 66.5 28 55.0455 28 41.6818C28 37.1249 29.8174 32.7547 33.0524 29.5324C36.2874 26.3102 40.675 24.5 45.25 24.5C49.825 24.5 54.2126 26.3102 57.4476 29.5324C60.6826 32.7547 62.5 37.1249 62.5 41.6818Z"
@@ -824,7 +845,8 @@
                   stroke="white" stroke-width="1.81818" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
-            <p class="text-[18px] font-normal leading-relaxed tracking-[0.05em] text-[#4f4f4f]">
+            <p
+              class="text-[18px] font-normal leading-relaxed tracking-[0.05em] text-[#4f4f4f] max-md:text-black max-md:text-[12px] max-md:leading-[140%] max-md:tracking-[0.05em] max-md:w-[276px] max-md:h-[68px] max-md:overflow-hidden max-md:[text-shadow:0_2px_4px_rgba(0,0,0,0.25)]">
               Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
               quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
             </p>
@@ -832,8 +854,9 @@
 
         </div>
 
+        <!-- IMAGEM DESKTOP (escondida em telas mobile) -->
         <img src="/src/assets/images/xicara-avanti-2.png" alt="Xícara Avanti"
-          class="w-[652px] h-[728px] object-cover shrink-0" />
+          class="w-[652px] h-[728px] object-cover shrink-0 max-md:hidden" />
 
       </div>
     </section>
