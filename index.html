@@ -15,7 +15,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
- <!-- BANNER PROMOCIONAL -->
+<!-- BANNER PROMOCIONAL -->
+
 <body class="font-sans antialiased text-gray-900 bg-white">
   <div
     class="bg-avanti-blue text-white text-center h-[65px] md:h-[30px] flex items-center justify-center w-full font-sans px-4 max-[768px]:mb-[27px]">
@@ -43,7 +44,7 @@
         </svg>
       </button>
 
-     <!-- LOGO (mobile + desktop) -->
+      <!-- LOGO (mobile + desktop) -->
       <a href="/" class="shrink-0 max-[768px]:w-[148px] max-[768px]:h-[27px] max-[768px]:mr-[69px]"
         aria-label="Avanti - Página Inicial">
         <img src="/src/assets/images/logo-avanti.svg" alt="Logo Avanti" width="120" height="32"
@@ -73,7 +74,7 @@
         </div>
       </div>
 
-       <!-- NAV DOS ÍCONES (usuário + carrinho) -->
+      <!-- NAV DOS ÍCONES (usuário + carrinho) -->
       <nav class="flex items-center gap-6 max-[768px]:ml-auto max-[768px]:gap-0" aria-label="Menu do usuário">
         <!-- Ícone de usuário: só em telas ≥ 1024px (lg:flex) -->
         <a href="#" class="hidden lg:flex items-center gap-2 text-gray-700 hover:text-avanti-blue transition">
@@ -348,23 +349,57 @@
   </header>
 
   <main>
-    <!-- aqui foi o trecho que mais me deu trabalho: o Figma tinha a cadeira e o banner posicionados em
-         pixel fixo (1920x510), mas eu precisava que isso ficasse responsivo sem quebrar a proporção.
-         a saída que encontrei foi manter a section com aspect-ratio fixo (aspect-[1920/510]) e posicionar
-         a cadeira e o banner em % calculado a partir do valor em px que o Figma me dava
-         (ex: 452px de 1920px = calc(452/1920*100%)), assim a posição acompanha o redimensionamento
-         da tela em vez de ficar "engessada" só pra desktop -->
-    <section class="relative w-full bg-gray-light overflow-hidden">
-      <div class="relative w-full max-w-[1920px] mx-auto aspect-[1920/510]">
-        <img src="/src/assets/images/hero-cadeira.png" alt="Cadeira branca moderna com pilha de roupas dobradas"
-          class="absolute left-[calc(452/1920*100%)] top-0 h-full w-auto object-contain z-10" loading="eager" />
 
+    <!-- HERO -->
+    <section class="relative w-full bg-gray-light overflow-hidden">
+      <div
+        class="relative w-full max-w-[1920px] mx-auto aspect-[1920/510] max-[768px]:aspect-auto max-[768px]:h-[306px]">
+
+        <!-- Cadeira (mobile + desktop) -->
+        <img src="/src/assets/images/hero-cadeira.png" alt="Cadeira branca moderna com pilha de roupas dobradas" class="absolute md:left-auto md:right-[47.3%] top-0 h-full w-auto object-contain z-10
+                max-[768px]:left-0 max-[768px]:right-[165px] max-[768px]:h-full max-[768px]:w-auto 
+                max-[768px]:object-cover max-[768px]:object-[-185px]
+                max-[768px]:brightness-[0.92] max-[768px]:contrast-[1.2]" loading="eager" />
+
+        <!-- SUPERSALE (desktop) -->
         <div
-          class="absolute right-[calc(266.97/1920*100%)] top-[calc(143/510*100%)] w-[calc(576/1920*100%)] h-[calc(224/510*100%)] z-20">
-          <img src="/src/assets/images/banner-supersale-context.png"
-            alt="Super Sale - Itens selecionados com até 50% OFF" class="w-full h-full object-contain"
-            loading="eager" />
+          class="absolute left-[56.2%] top-[27.8%] w-[30.1%] h-[44.1%] z-20 hidden md:flex flex-col items-center justify-center text-center">
+          <span
+            class="text-[5.2vw] leading-none font-bold text-black uppercase [text-shadow:0px_4px_4px_rgba(0,0,0,0.25)]">
+            SUPER<span class="font-normal">SALE</span>
+          </span>
+          <span
+            class="text-[1.3vw] font-bold text-avanti-blue uppercase tracking-[0.25em] mt-[1vw] [text-shadow:0px_4px_4px_rgba(0,0,0,0.25)]">
+            ITENS SELECIONADOS COM ATÉ
+          </span>
+          <span
+            class="text-[3.1vw] font-bold text-avanti-blue leading-none mt-[1vw] [text-shadow:0px_4px_4px_rgba(0,0,0,0.25)]">
+            50% OFF
+          </span>
+
         </div>
+
+        <!-- SUPERSALE (mobile) -->
+        <div
+          class="absolute left-[212.5px] top-[71px] w-[140px] h-[163px] z-20 flex flex-col items-center justify-center md:hidden">
+          <span
+            class="text-[40px] font-bold leading-none text-black uppercase [text-shadow:0px_4px_4px_rgba(0,0,0,0.25)]">SUPER</span>
+          <span
+            class="text-[40px] font-normal leading-none text-black uppercase [text-shadow:0px_4px_4px_rgba(0,0,0,0.25)]">SALE</span>
+          <span
+            class="text-[12px] font-bold text-avanti-blue mt-[12px] uppercase [text-shadow:0px_4px_4px_rgba(0,0,0,0.25)]">Selected
+            items up to</span>
+          <span
+            class="text-[32px] font-bold text-avanti-blue leading-none mt-[12px] [text-shadow:0px_4px_4px_rgba(0,0,0,0.25)]">50%OFF</span>
+        </div>
+
+        <!-- Paginação (mobile) -->
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-30 md:hidden">
+          <span class="w-2 h-2 rounded-full bg-gray-400"></span>
+          <span class="w-2 h-2 rounded-full bg-avanti-blue"></span>
+          <span class="w-2 h-2 rounded-full bg-gray-400"></span>
+        </div>
+
       </div>
     </section>
 
