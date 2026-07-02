@@ -17,6 +17,7 @@ const SWIPER_BREAKPOINTS = {
 document.addEventListener('DOMContentLoaded', () => {
   initMegamenu();
   initSearch();
+  initSearchMobile();
   initProductsSwiper();
 });
 
@@ -85,7 +86,7 @@ function initMegamenu() {
   });
 }
 
-// campo de busca
+// função de busca para desktop
 function initSearch() {
   const searchForm = document.getElementById('search-form');
   const searchInput = document.getElementById('search-input');
@@ -119,6 +120,36 @@ function initSearch() {
       searchResult.textContent = `Você buscou por: '${queryText}'`;
       searchResult.classList.remove('hidden');
     } else {
+      searchResult.classList.add('hidden');
+    }
+  });
+}
+
+// função de busca para mobile
+function initSearchMobile() {
+  const searchForm = document.getElementById('search-form-mobile');
+  const searchInput = document.getElementById('search-input-mobile');
+  const searchResult = document.getElementById('search-result-mobile');
+
+  if (!searchForm || !searchInput || !searchResult) {
+    console.warn('Busca mobile: elementos não encontrados');
+    return;
+  }
+
+  searchForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const queryText = searchInput.value.trim();
+    if (queryText !== '') {
+      searchResult.textContent = `Você buscou por: '${queryText}'`;
+      searchResult.classList.remove('hidden');
+    } else {
+      searchResult.classList.add('hidden');
+    }
+  });
+
+  // esconder resultado se o input for esvaziado
+  searchInput.addEventListener('input', () => {
+    if (searchInput.value.trim() === '') {
       searchResult.classList.add('hidden');
     }
   });
