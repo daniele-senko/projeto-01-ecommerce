@@ -15,8 +15,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
+ <!-- BANNER PROMOCIONAL -->
 <body class="font-sans antialiased text-gray-900 bg-white">
-  <div class="bg-avanti-blue text-white text-center h-[65px] md:h-[30px] flex items-center justify-center w-full font-sans px-4">
+  <div
+    class="bg-avanti-blue text-white text-center h-[65px] md:h-[30px] flex items-center justify-center w-full font-sans px-4 max-[768px]:mb-[27px]">
     <span class="text-[14px] font-semibold leading-[22px] tracking-wide">
       Ganhe
       <span
@@ -27,27 +29,38 @@
     </span>
   </div>
 
+  <!-- HEADER PRINCIPAL -->
   <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
-    <div class="container mx-auto px-4 h-[72px] flex items-center justify-between gap-4 relative">
-      <a href="/" class="shrink-0" aria-label="Avanti - Página Inicial">
-        <img src="/src/assets/images/logo-avanti.svg" alt="Logo Avanti" width="120" height="32" class="h-8 w-auto" />
+    <!-- MOBILE: container sem padding lateral, altura automática, flex-wrap e gap zero -->
+    <div
+      class="container mx-auto px-4 h-[72px] flex items-center justify-between gap-4 relative max-[768px]:h-auto max-[768px]:flex-wrap max-[768px]:gap-0 max-[768px]:px-0">
+
+      <!-- BOTÃO HAMBÚRGUER (exclusivo mobile) -->
+      <button id="mobile-menu-btn"
+        class="flex md:hidden items-center justify-center w-8 h-8 text-gray-700 hover:text-avanti-blue transition max-[768px]:ml-[16px] max-[768px]:mr-[81px]">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+     <!-- LOGO (mobile + desktop) -->
+      <a href="/" class="shrink-0 max-[768px]:w-[148px] max-[768px]:h-[27px] max-[768px]:mr-[69px]"
+        aria-label="Avanti - Página Inicial">
+        <img src="/src/assets/images/logo-avanti.svg" alt="Logo Avanti" width="120" height="32"
+          class="h-8 w-auto max-[768px]:w-[148px] max-[768px]:h-[27px]" />
       </a>
 
-      <!-- barra de busca: o label fica sr-only (só pra leitor de tela) porque visualmente o placeholder
-           já mostra o que fazer; o resultado da busca é só uma div que mostro/esconço via JS -->
+      <!-- BUSCA DESKTOP -->
       <div class="hidden md:flex flex-col items-center relative flex-1 max-w-[596.17px] mx-auto">
         <form id="search-form" class="w-full relative flex items-center">
           <label for="search-input" class="sr-only">Buscar produtos</label>
           <input type="text" id="search-input" placeholder="Digite aqui o que você procura" autocomplete="off"
             class="w-full h-[40px] border border-gray-300 rounded-[10px] pl-5 pr-20 focus:outline-none focus:border-avanti-blue focus:ring-1 focus:ring-avanti-blue transition-all text-sm font-sans" />
-
-          <!-- botão de limpar busca só aparece quando tem texto digitado (controlo isso no main.js) -->
           <button type="button" id="search-clear-btn"
             class="hidden absolute right-12 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 transition text-lg"
             aria-label="Limpar busca">
             &times;
           </button>
-
           <button type="submit" id="search-btn"
             class="absolute right-3 top-1/2 -translate-y-1/2 p-1 hover:opacity-80 transition"
             aria-label="Realizar busca">
@@ -55,13 +68,14 @@
               class="w-5 h-5 opacity-60" />
           </button>
         </form>
-
         <div id="search-result"
           class="hidden absolute top-[46px] left-0 w-full px-4 py-2 bg-blue-50 text-avanti-blue font-semibold rounded-lg text-center text-sm border border-blue-100 shadow-md z-50">
         </div>
       </div>
 
-      <nav class="flex items-center gap-6">
+       <!-- NAV DOS ÍCONES (usuário + carrinho) -->
+      <nav class="flex items-center gap-6 max-[768px]:ml-auto max-[768px]:gap-0" aria-label="Menu do usuário">
+        <!-- Ícone de usuário: só em telas ≥ 1024px (lg:flex) -->
         <a href="#" class="hidden lg:flex items-center gap-2 text-gray-700 hover:text-avanti-blue transition">
           <img src="/src/assets/icons/icon-user.svg" alt="" width="24" height="24" class="w-6 h-6 shrink-0" />
           <div class="flex flex-col leading-none">
@@ -69,20 +83,31 @@
             <span class="text-[14px] font-semibold font-sans">Nome cliente!</span>
           </div>
         </a>
-        <a href="#" class="relative group p-1" aria-label="Carrinho de compras (2 itens)">
+        <!-- MOBILE: Carrinho -->
+        <a href="#" class="relative group max-[768px]:mr-[16px]" aria-label="Carrinho de compras (2 itens)">
           <img src="/src/assets/icons/icon-cart.svg" alt="" width="28" height="28"
             class="w-7 h-7 group-hover:opacity-80 transition" />
           <span
-            class="absolute -top-1 -right-1 bg-avanti-blue text-white w-[21px] h-[21px] rounded-full flex items-center justify-center border-2 border-white font-sans font-bold text-[11px] leading-none">
-            2
-          </span>
+            class="absolute -top-1 -right-1 bg-avanti-blue text-white w-[21px] h-[21px] rounded-full flex items-center justify-center border-2 border-white font-sans font-bold text-[11px] leading-none">2</span>
         </a>
       </nav>
+
+      <!-- BUSCA MOBILE -->
+      <div class="flex md:hidden w-full flex-col items-center max-[768px]:mt-[40px] max-[768px]:mb-[20px]">
+        <form id="search-form-mobile" class="relative w-full max-[768px]:max-w-[361px] max-[768px]:h-[50px] mx-auto">
+          <input type="text" id="search-input-mobile" placeholder="Buscar produtos..."
+            class="w-full h-full pl-4 pr-10 rounded-lg border border-gray-300 text-sm focus:outline-none focus:border-avanti-blue" />
+          <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2">
+            <img src="/src/assets/icons/icon-search.svg" alt="Buscar" width="20" height="20" />
+          </button>
+        </form>
+        <!-- RESULTADO DA BUSCA MOBILE -->
+        <div id="search-result-mobile"
+          class="w-full max-[768px]:max-w-[361px] text-center text-sm text-avanti-blue mt-2 hidden"></div>
+      </div>
     </div>
 
-    <!-- menu de departamentos: o Figma tinha um menu "Todas as Categorias" com sub-painel e outro item
-         de departamento com painel próprio, então separei os dois comportamentos (content-todas-categorias
-         e content-primeiro-depto) pra não misturar a lógica de hover/click no main.js -->
+    <!-- MENU DE DEPARTAMENTOS (desktop) -->
     <nav id="nav-menu-container" class="border-t border-gray-100 hidden md:block relative">
       <div class="container mx-auto px-4">
         <ul class="flex items-center h-12 text-sm font-medium text-gray-600 gap-[45px]">
@@ -93,14 +118,12 @@
               Todas as Categorias
             </button>
           </li>
-
           <li class="h-full flex items-center">
             <a id="trigger-primeiro-depto" href="#"
               class="menu-trigger text-gray-600 hover:text-avanti-blue hover:font-bold transition h-full flex items-center whitespace-nowrap">
               Departamento
             </a>
           </li>
-
           <li class="shrink-0 h-full flex items-center">
             <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Departamento</a>
           </li>
@@ -116,6 +139,7 @@
         </ul>
       </div>
 
+      <!-- MEGAMENU (desktop) -->
       <div id="megamenu-dropdown"
         class="opacity-0 invisible absolute top-full left-1/2 -translate-x-1/2 w-full max-w-[1216px] bg-white shadow-xl border border-gray-100 z-50 rounded-b-[10px] transition-all duration-200 pointer-events-none overflow-hidden">
         <div class="flex h-[360px]">
@@ -194,95 +218,45 @@
               </a>
             </div>
 
-            <!-- data-content corresponde ao data-index de cada link da coluna; troco a categoria visível
-                 mostrando/escondendo essas divs no main.js em vez de re-renderizar tudo -->
             <div class="flex-1 relative overflow-y-auto custom-scrollbar p-6 h-full">
               <div data-content="0" class="dept-content grid grid-cols-3 gap-x-6 gap-y-6 w-full">
                 <div>
                   <a href="#" class="block text-avanti-blue font-bold text-sm mb-3 whitespace-nowrap">Categoria</a>
                   <ul class="space-y-2 text-sm text-gray-500">
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
                   </ul>
                 </div>
                 <div>
                   <a href="#" class="block text-avanti-blue font-bold text-sm mb-3 whitespace-nowrap">Categoria</a>
                   <ul class="space-y-2 text-sm text-gray-500">
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
                   </ul>
                 </div>
                 <div>
                   <a href="#" class="block text-avanti-blue font-bold text-sm mb-3 whitespace-nowrap">Categoria</a>
                   <ul class="space-y-2 text-sm text-gray-500">
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                    </li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
                   </ul>
                 </div>
               </div>
@@ -291,9 +265,7 @@
                   <a href="#" class="block text-avanti-blue font-bold text-sm mb-3 whitespace-nowrap">Outra
                     Categoria</a>
                   <ul class="space-y-2 text-sm text-gray-500">
-                    <li>
-                      <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Subcategoria</a>
-                    </li>
+                    <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Subcategoria</a></li>
                   </ul>
                 </div>
               </div>
@@ -305,40 +277,24 @@
               <div>
                 <a href="#" class="block text-avanti-blue font-bold text-sm mb-3 whitespace-nowrap">Categoria</a>
                 <ul class="space-y-2 text-sm text-gray-500">
-                  <li>
-                    <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                  </li>
+                  <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                  <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                  <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                  <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
                 </ul>
               </div>
               <div>
                 <a href="#" class="block text-avanti-blue font-bold text-sm mb-3 whitespace-nowrap">Categoria</a>
                 <ul class="space-y-2 text-sm text-gray-500">
-                  <li>
-                    <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                  </li>
+                  <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                  <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
                 </ul>
               </div>
               <div>
                 <a href="#" class="block text-avanti-blue font-bold text-sm mb-3 whitespace-nowrap">Categoria</a>
                 <ul class="space-y-2 text-sm text-gray-500">
-                  <li>
-                    <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a>
-                  </li>
+                  <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
+                  <li><a href="#" class="hover:text-avanti-blue transition whitespace-nowrap">Categoria</a></li>
                 </ul>
               </div>
             </div>
@@ -364,6 +320,28 @@
               </div>
             </article>
           </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <nav id="mobile-menu"
+      class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute top-[72px] left-0 w-full z-40"
+      aria-label="Menu mobile">
+      <div class="container mx-auto px-4 py-4">
+        <ul class="space-y-3 text-sm font-medium text-gray-700">
+          <li><a href="#" class="block py-2 hover:text-avanti-blue">Todas as Categorias</a></li>
+          <li><a href="#" class="block py-2 hover:text-avanti-blue">Departamento</a></li>
+          <li><a href="#" class="block py-2 hover:text-avanti-blue">Departamento</a></li>
+          <li><a href="#" class="block py-2 hover:text-avanti-blue">Departamento</a></li>
+          <li><a href="#" class="block py-2 hover:text-avanti-blue">Departamento</a></li>
+          <li><a href="#" class="block py-2 hover:text-avanti-blue">Departamento</a></li>
+        </ul>
+        <div class="mt-4 pt-4 border-t border-gray-100">
+          <a href="#" class="flex items-center gap-2 text-gray-700">
+            <img src="/src/assets/icons/icon-user.svg" alt="" width="20" height="20" />
+            <span>Olá, Nome cliente!</span>
+          </a>
         </div>
       </div>
     </nav>
