@@ -861,19 +861,37 @@
       </div>
     </section>
 
-    <section class="container mx-auto px-4 max-w-[1288.4px] mt-[67px]">
-      <div class="flex gap-[37px] items-center">
-        <div class="w-[652px] h-[747px] bg-[#C2C2C2] shrink-0 flex items-center justify-center overflow-hidden">
+    <!-- CONTAINER XICARA + TEXTO 2 -->
+    <section class="container mx-auto px-4 max-w-[1288.4px] mt-[74px]">
+
+      <div class="flex gap-[37px] items-center max-[768px]:flex-col max-[768px]:gap-[30px]">
+
+        <!-- IMAGEM DA XICARA -->
+        <div
+          class="w-[652px] h-[747px] bg-[#C2C2C2] shrink-0 flex items-center justify-center overflow-hidden max-[768px]:w-[calc(100%+32px)] max-[768px]:h-[391px]">
           <img src="/src/assets/images/xicara-avanti.png" alt="Xícara Avanti"
-            class="w-[523px] h-[528px] object-cover" />
+            class="w-[523px] h-[528px] object-cover max-[768px]:w-full max-[768px]:h-full" />
         </div>
 
-        <div class="w-[487px] h-[536px] flex flex-col justify-center">
+        <!-- TEXTO -->
+        <div
+          class="w-[487px] h-[536px] flex flex-col justify-center max-[768px]:w-full max-[768px]:h-auto max-[768px]:justify-start">
+
+          <!-- TITULO -->
           <h2 class="text-[30px] font-bold leading-[140%] tracking-[4%] uppercase text-black mb-[22px]">
             Lorem Ipsum
           </h2>
 
-          <p class="text-[18px] font-normal leading-relaxed text-gray-700 mb-[22px] tracking-[0.05em]">
+          <!-- PARÁGRAFOS DESKTOP (desktop) -->
+          <p
+            class="text-[18px] font-normal leading-relaxed text-gray-700 mb-[22px] tracking-[0.05em] max-[768px]:hidden">
+            Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut
+            eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra
+            magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin
+            euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas
+            efficitur id augue.
+          </p>
+          <p class="text-[18px] font-normal leading-relaxed text-gray-700 tracking-[0.05em] max-[768px]:hidden">
             Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut
             eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra
             magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin
@@ -881,13 +899,17 @@
             efficitur id augue.
           </p>
 
-          <p class="text-[18px] font-normal leading-relaxed text-gray-700 tracking-[0.05em]">
-            Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut
-            eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra
-            magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin
-            euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas
-            efficitur id augue.
+          <!-- PARÁGRAFOS MOBILE (mobile) -->
+          <p class="hidden max-[768px]:block text-[14px] font-normal leading-[140%] text-gray-700 tracking-[5%] mb-4">
+            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
+            quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
           </p>
+          <p class="hidden max-[768px]:block text-[14px] font-normal leading-[140%] text-gray-700 tracking-[5%]">
+            Cras dignissim est et pellentesque tincidunt. Praesent bibendum quis velit a aliquam. Ut vestibulum turpis
+            eget mi iaculis ullamcorper. Curabitur nec metus sed tortor sollicitudin porta nec eu enim. Ut fermentum
+            scelerisque tortor mollis volutpat. Mauris iaculis magna nisl, vel porttitor augue placerat et.
+          </p>
+
         </div>
       </div>
     </section>
